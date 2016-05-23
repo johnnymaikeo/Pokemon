@@ -1,25 +1,158 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hzU-LC-Rqw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Pokedex-->
+        <scene sceneID="oAg-Ic-ovu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="0Fo-yd-quo" customClass="ListTableViewController" customModule="Pokemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" id="VH3-pU-arw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonListCell" rowHeight="80" id="Aqy-eo-I4Y" customClass="PokedexTableViewCell" customModule="Pokemon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqy-eo-I4Y" id="hus-0z-t0p">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3jI-eF-aNr">
+                                            <rect key="frame" x="8" y="8" width="63.5" height="63.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="Azb-jK-jAM"/>
+                                                <constraint firstAttribute="width" secondItem="3jI-eF-aNr" secondAttribute="height" multiplier="1:1" id="Y0z-B5-Jiw"/>
+                                                <constraint firstAttribute="width" constant="120" id="tIg-eD-gsq"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Azb-jK-jAM"/>
+                                                    <exclude reference="tIg-eD-gsq"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwZ-QI-YBf">
+                                            <rect key="frame" x="79.5" y="22.5" width="78.5" height="35"/>
+                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rwZ-QI-YBf" firstAttribute="centerY" secondItem="hus-0z-t0p" secondAttribute="centerY" id="0PL-1T-QOj"/>
+                                        <constraint firstItem="3jI-eF-aNr" firstAttribute="top" secondItem="hus-0z-t0p" secondAttribute="topMargin" id="5Iu-Jz-KuK"/>
+                                        <constraint firstItem="3jI-eF-aNr" firstAttribute="top" secondItem="hus-0z-t0p" secondAttribute="topMargin" id="NZd-vW-Rxk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3jI-eF-aNr" secondAttribute="bottom" id="OOu-Dz-Om2"/>
+                                        <constraint firstItem="rwZ-QI-YBf" firstAttribute="leading" secondItem="3jI-eF-aNr" secondAttribute="trailing" constant="8" id="j69-Ug-UPB"/>
+                                        <constraint firstItem="3jI-eF-aNr" firstAttribute="leading" secondItem="hus-0z-t0p" secondAttribute="leadingMargin" id="qYB-VT-aKq"/>
+                                        <constraint firstItem="3jI-eF-aNr" firstAttribute="leading" secondItem="hus-0z-t0p" secondAttribute="leadingMargin" id="uki-vr-b1E"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pokemonImage" destination="3jI-eF-aNr" id="QwE-Ph-q3d"/>
+                                    <outlet property="pokemonName" destination="rwZ-QI-YBf" id="Dz5-t0-CfE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Fo-yd-quo" id="u9h-5J-xZD"/>
+                            <outlet property="delegate" destination="0Fo-yd-quo" id="3SI-5j-eod"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pokedex" id="MEA-1E-Nz2"/>
+                    <connections>
+                        <segue destination="7la-Tq-cie" kind="show" identifier="SegueDetails" id="GKd-wH-iPM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSt-Nb-w7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1133" y="370"/>
+        </scene>
+        <!--Details Table View Controller-->
+        <scene sceneID="UqX-hx-txk">
+            <objects>
+                <tableViewController storyboardIdentifier="DetailsTableViewController" id="7la-Tq-cie" customClass="DetailsTableViewController" customModule="Pokemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="szw-4D-pz9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="ig8-nC-ucf">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpriteFrontDefault" rowHeight="200" id="DnV-p3-Y1k">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DnV-p3-Y1k" id="tfG-NV-L9v">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3GC-wa-Wrg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3GC-wa-Wrg" secondAttribute="bottom" constant="-8" id="7Om-IO-PUd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3GC-wa-Wrg" secondAttribute="trailing" constant="-8" id="G9L-ue-xd7"/>
+                                                <constraint firstItem="3GC-wa-Wrg" firstAttribute="top" secondItem="tfG-NV-L9v" secondAttribute="topMargin" constant="-8" id="N2l-Ze-Gxg"/>
+                                                <constraint firstItem="3GC-wa-Wrg" firstAttribute="leading" secondItem="tfG-NV-L9v" secondAttribute="leadingMargin" constant="-8" id="X46-f2-ySM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="YPM-dq-yvY">
+                                        <rect key="frame" x="0.0" y="264" width="600" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YPM-dq-yvY" id="3yC-JY-NUQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="153.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1nJ-or-y5E">
+                                        <rect key="frame" x="0.0" y="418" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1nJ-or-y5E" id="69T-Le-cw9">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7la-Tq-cie" id="Ova-MM-ug2"/>
+                            <outlet property="delegate" destination="7la-Tq-cie" id="dRI-RE-2HU"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="imageFrontDefault" destination="3GC-wa-Wrg" id="g3w-EK-hz1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdd-Dx-zUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="370"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vLP-km-hNk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzU-LC-Rqw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPG-iV-GUv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Fo-yd-quo" kind="relationship" relationship="rootViewController" id="wv8-i4-t4t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PE-0u-y54" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="370"/>
         </scene>
     </scenes>
 </document>
